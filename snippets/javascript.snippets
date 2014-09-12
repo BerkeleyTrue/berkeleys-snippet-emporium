@@ -1,5 +1,18 @@
-snippet cs
-	var cx = React.addons.classSet;
+snippet jsx
+	/** @jsx React.DOM */
+snippet rcc
+	/** @jsx React.DOM */
+	'use strict';
+	var React = require('React');
+
+	var ${1:ClassName} = React.createClass({
+		render: function() {
+			return (
+				${0:<div />}
+			);
+		}
+	});
+	module.exports = $1;
 snippet cdm
 	componentDidMount: function() {
 		${1}
@@ -24,6 +37,8 @@ snippet cwu
 	componentWillUpdate: function(nextProps, nextState) {
 		${1}
 	},
+snippet cs
+	var cx = React.addons.classSet;
 snippet cx
 	cx({
 		${1}: ${2}
@@ -44,32 +59,10 @@ snippet gis
 	},
 snippet ism
 	isMounted()
-snippet jsx
-	/**
-	 * @jsx React.DOM
-	 */
 snippet pt
 	propTypes: {
 		${1}: React.PropTypes.${2:string}
 	},
-snippet rcc
-	/**
-	 * @jsx React.DOM
-	 */
-
-	var React = require('React');
-
-	var ${1:ClassName} = React.createClass({
-
-		render: function() {
-			return (
-				${0:<div />}
-			);
-		}
-
-	});
-
-	module.exports = $1;
 snippet ren
 	render: function() {
 		return (
@@ -84,6 +77,10 @@ snippet scu
 	shouldComponentUpdate: function(nextProps, nextState) {
 		${1}
 	},
+snippet vpns
+	var props = this.props,
+			state = this.state
+	;${1}
 snippet props
 	this.props.${1}
 snippet state
