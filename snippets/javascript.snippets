@@ -1,17 +1,14 @@
-snippet jsx
-	/** @jsx React.DOM */
 snippet rcc
 	var ${1:ClassName} = React.createClass({
 		render: function() {
 			return (
-				${0:<div />}
+				${0:<div>}
+				</div>
 			);
 		}
 	});
 	module.exports = $1;
 snippet rccc
-	/** @jsx React.DOM */
-	'use strict';
 	var React = require('react');
 
 	var ${1:ClassName} = React.createClass({
@@ -95,6 +92,3 @@ snippet state
 	this.state.${0}
 snippet trp
 	transferPropsTo(${0});
-snippet pns
-	var state = this.state,
-			props = this.props;$0
