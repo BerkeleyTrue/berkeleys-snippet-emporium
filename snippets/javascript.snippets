@@ -18,6 +18,7 @@ snippet rccc
 			);
 		}
 	});
+
 	module.exports = $1;
 snippet cdm
 	componentDidMount: function() {
@@ -35,11 +36,11 @@ snippet cwr
 	componentWillReceiveProps: function(nextProps) {
 		${0}
 	},
-snippet cwun
+snippet cwu
 	componentWillUnmount: function() {
 		${0}
 	},
-snippet cwu
+snippet cwup
 	componentWillUpdate: function(nextProps, nextState) {
 		${0}
 	},
@@ -63,6 +64,10 @@ snippet gis
 			${1}: ${0}
 		};
 	},
+snippet gss
+	getStateStream: function() {
+		return ${0};
+	}
 snippet ism
 	isMounted()
 snippet pt
@@ -92,3 +97,30 @@ snippet state
 	this.state.${0}
 snippet trp
 	transferPropsTo(${0});
+snippet rxs
+	var Store = require('thundercats').Store,
+			${1:Comp}Actions = require('./Actions');
+
+	var ${2:$1}Store = Store.create({
+		getInitialValue: function() {
+			return {
+				${3}
+			};
+		},
+
+		getOperations: function() {
+			return ${0:$1}Actions;
+		}
+	});
+
+	module.exports = $1Store;
+snippet rxa
+	var Action = require('thundercats').Action;
+
+	var ${1:Comp}Actions = Action.createActions([
+		${0}
+	]);
+
+	module.exports = $1Actions;
+snippet debug
+	debug = require('debug')('${1}')${0:,}
