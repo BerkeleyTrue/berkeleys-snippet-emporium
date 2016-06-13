@@ -1,0 +1,121 @@
+snippet rcc
+	import React, { PropTypes } from 'react';
+
+	export default class ${1:FooComponent} extends React.Component {
+		constructor(...args) {
+			super(...args);
+		}
+		static displayName = '$1';
+		static propTypes = {
+		};
+		render() {
+			return (
+				${0: null}
+			);
+		}
+	}
+snippet rrcc
+	import React, { PropTypes } from 'react';
+	import { connect } from 'react-redux';
+	import { ${3:action} } from '../redux/actions';
+
+	const bindableActions = {};
+	const mapStateToProps = createSelector(
+		state => state.${2:app},
+		() => ({})
+	);
+
+	export class ${1:FooComponent} extends React.Component {
+		constructor(...args) {
+			super(...args);
+		}
+		static displayName = '$1';
+		static propTypes = {
+			$3: PropTypes.func
+		};
+
+		render() {
+			return (
+				${0:null}
+			);
+		}
+	}
+
+	export default connect(
+		mapStateToProps,
+		bindableActions
+	)($1);
+snippet cdm
+	componentDidMount() {
+		${0}
+	}
+snippet cdu
+	componentDidUpdate(prevProps, prevState) {
+		${0}
+	}
+snippet cwm
+	componentWillMount() {
+		${0}
+	}
+snippet cwr
+	componentWillReceiveProps(nextProps) {
+		${0}
+	}
+snippet cwu
+	componentWillUnmount() {
+		${0}
+	}
+snippet cwup
+	componentWillUpdate(nextProps, nextState) {
+		${0}
+	}
+snippet fup
+	forceUpdate(${1:callback});
+snippet gdp
+	getDefaultProps: function() {
+		return {
+			${1}
+		};
+	},
+snippet sdp
+	static defaultProps = {
+		${1}
+	}
+snippet gcc
+	getChildContext() {
+		return {
+			${1}
+		};
+	}
+snippet gis
+	getInitialState: function() {
+		return {
+			${1}: ${0}
+		};
+	},
+snippet spt
+	static propTypes = {
+		${1:PropName}: PropTypes.${0:string}
+	}
+snippet dpt
+	${1:PropName}: PropTypes.${0:string}
+snippet ren
+	render() {
+		return (
+			${0:<div />}
+		);
+	}
+snippet scu
+	shouldComponentUpdate(nextProps, nextState) {
+		${0}
+	}
+snippet props
+	const {
+		${0}
+	} = this.props;
+snippet debug
+	import debug from 'debug';
+
+	const log = debug('${1:namespace}');
+snippet display
+	static displayName = '${0:ComponentName}'

@@ -1,0 +1,38 @@
+snippet arw
+	${1:()} => ${0}
+snippet meth
+	${1:method}() {
+		${0}
+	}
+snippet class
+	class ${1:ClassName} extends ${2:SuperClass} {
+		constructor(...args) {
+			super(...args);
+		}
+	}
+snippet iter
+	let ${1:Name} = {
+		[Symbol.iterator]() {
+			${1}
+			return {
+				next() {
+					return {
+						value: ${0},
+						done: false
+					}
+				}
+			}
+		}
+	};
+snippet gener
+	function* ${1:Name}() {
+		yield ${0};
+	}
+snippet prom
+	const ${1:Name} = new Promise((res, rej) => {
+		${0}
+	});
+snippet construct
+	constructor(...props) {
+		super(..props);
+	}
