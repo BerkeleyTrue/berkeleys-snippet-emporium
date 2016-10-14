@@ -1,121 +1,171 @@
-snippet rcc
-	import React, { PropTypes } from 'react';
+global !p
+def camelCaseToKebab(name):
+	s1 = re.sub('(.)([A-Z][a-z]+)', r'\1-\2', name)
+	return re.sub('([a-z0-9])([A-Z])', r'\1-\2', s1).lower()
+endglobal
 
-	export default class ${1:FooComponent} extends React.Component {
-		constructor(...args) {
-			super(...args);
-		}
-		static displayName = '$1';
-		static propTypes = {
-		};
+snippet rcc
+	import React, { PureComponent } from 'react';
+
+	const propTypes = {};
+	export default class ${1:FooComponent} extends PureComponent {
 		render() {
 			return (
 				${0: null}
 			);
 		}
 	}
+	$1.displayName = '$1';
+	$1.propTypes = propTypes;
+endsnippet
+
+snippet rccs
+	import React, { PureComponent } from 'react';
+	import classnames from 'classnames/bind';
+
+	import styles from './$1.styl';
+
+	const cx = classnames.bind(styles);
+	const propTypes = {};
+
+	export default class ${1:FooComponent} extends PureComponent {
+		render() {
+			return (
+				${0: <div className={ cx('`!p snip.rv = camelCaseToKebab(t[1])`') }></div>}
+			);
+		}
+	}
+	$1.displayName = '$1';
+	$1.propTypes = propTypes;
+endsnippet
+
 snippet rrcc
-	import React, { PropTypes } from 'react';
+	import React, { PureComponent } from 'react';
 	import { connect } from 'react-redux';
 	import { ${3:action} } from '../redux/actions';
 
-	const bindableActions = {};
-	const mapStateToProps = createSelector(
-		state => state.${2:app},
-		() => ({})
-	);
+	const propTypes = {};
+	const actionsMap = {};
+	const mapStateToProps = state => state;
 
-	export class ${1:FooComponent} extends React.Component {
-		constructor(...args) {
-			super(...args);
-		}
-		static displayName = '$1';
-		static propTypes = {
-			$3: PropTypes.func
-		};
-
+	export class ${1:FooComponent} extends PureComponent {
 		render() {
 			return (
 				${0:null}
 			);
 		}
 	}
+	$1.displayName = '$1';
+	$1.propTypes = propTypes;
 
 	export default connect(
 		mapStateToProps,
-		bindableActions
+		actionsMap
 	)($1);
+endsnippet
+
 snippet cdm
 	componentDidMount() {
 		${0}
 	}
+endsnippet
+
 snippet cdu
 	componentDidUpdate(prevProps, prevState) {
 		${0}
 	}
+endsnippet
+
 snippet cwm
 	componentWillMount() {
 		${0}
 	}
+endsnippet
+
 snippet cwr
 	componentWillReceiveProps(nextProps) {
 		${0}
 	}
+endsnippet
+
 snippet cwu
 	componentWillUnmount() {
 		${0}
 	}
+endsnippet
+
 snippet cwup
 	componentWillUpdate(nextProps, nextState) {
 		${0}
 	}
-snippet fup
-	forceUpdate(${1:callback});
+endsnippet
+
 snippet gdp
 	getDefaultProps: function() {
 		return {
 			${1}
 		};
 	},
+endsnippet
+
 snippet sdp
 	static defaultProps = {
 		${1}
 	}
+endsnippet
+
 snippet gcc
 	getChildContext() {
 		return {
 			${1}
 		};
 	}
+endsnippet
+
 snippet gis
 	getInitialState: function() {
 		return {
 			${1}: ${0}
 		};
 	},
+endsnippet
+
 snippet spt
 	static propTypes = {
 		${1:PropName}: PropTypes.${0:string}
 	}
+endsnippet
+
 snippet dpt
 	${1:PropName}: PropTypes.${0:string}
+endsnippet
+
 snippet ren
 	render() {
 		return (
-			${0:<div />}
+			${0:null}
 		);
 	}
+endsnippet
+
 snippet scu
 	shouldComponentUpdate(nextProps, nextState) {
 		${0}
 	}
+endsnippet
+
 snippet props
 	const {
 		${0}
 	} = this.props;
+endsnippet
+
 snippet debug
 	import debug from 'debug';
 
 	const log = debug('${1:namespace}');
+endsnippet
+
 snippet display
 	static displayName = '${0:ComponentName}'
+endsnippet
