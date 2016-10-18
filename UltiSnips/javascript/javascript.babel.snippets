@@ -18,6 +18,10 @@ ${1:method}() {
 }
 endsnippet
 
+snippet bindMeth
+this.${1:method} = this.$1.bind(this);
+endsnippet
+
 snippet class
 class ${1:ClassName} extends ${2:SuperClass} {
 	constructor(...args) {
