@@ -44,9 +44,11 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { ${3:action} } from '../redux/actions';
 
-const propTypes = {};
-const actionsMap = {};
+const propTypes = {
+};
 const mapStateToProps = state => state;
+const mapDispatchToProps = {
+};
 
 export class ${1:FooComponent} extends PureComponent {
 	render() {
@@ -60,7 +62,7 @@ $1.propTypes = propTypes;
 
 export default connect(
 	mapStateToProps,
-	actionsMap
+	mapDispatchToProps
 )($1);
 endsnippet
 
@@ -168,4 +170,12 @@ endsnippet
 
 snippet display
 static displayName = '${0:ComponentName}'
+endsnippet
+
+snippet cx
+className='${1:foo}'
+endsnippet
+
+snippet cx()
+className={ cx('${1:foo}') }
 endsnippet
