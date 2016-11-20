@@ -24,7 +24,7 @@ ${1:method}() {
 }
 endsnippet
 
-snippet bindMeth
+snippet thisBind
 this.${1:method} = this.$1.bind(this);
 endsnippet
 
@@ -33,28 +33,6 @@ class ${1:ClassName} extends ${2:SuperClass} {
 	constructor(...args) {
 		super(...args);
 	}
-}
-endsnippet
-
-snippet iter
-let ${1:Name} = {
-	[Symbol.iterator]() {
-		${1}
-		return {
-			next() {
-				return {
-					value: ${0},
-					done: false
-				}
-			}
-		}
-	}
-};
-endsnippet
-
-snippet gener
-function* ${1:Name}() {
-	yield ${0};
 }
 endsnippet
 
@@ -67,5 +45,17 @@ endsnippet
 snippet construct
 constructor(...props) {
 	super(...props);
+}
+endsnippet
+
+snippet fun "create a named func"
+function ${1:foo}(${2}) {
+	${0}
+}
+endsnippet
+
+snippet func "create an anon func"
+function(${1}) {
+	${0}
 }
 endsnippet
