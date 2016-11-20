@@ -1,0 +1,15 @@
+snippet f "function" b
+function! ${1:function_name}(${2})
+	${3:" code}
+endfunction
+endsnippet
+
+snippet plug "Plugin definition"
+	Plugin '${0}'
+endsnippet
+
+snippet au "autocmd" 
+augroup ${1:AU_NAME}
+	autocmd ${2:BufRead,BufNewFile} ${3:*.ext,*.ext3|<buffer[=N]>} ${0}
+augroup END
+endsnippet
