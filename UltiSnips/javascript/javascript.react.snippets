@@ -4,7 +4,7 @@ def camelCaseToKebab(name):
 	return re.sub('([a-z0-9])([A-Z])', r'\1-\2', s1).lower()
 endglobal
 
-snippet rcc
+snippet rcc "create a pure react component"
 import React, { PureComponent } from 'react';
 
 const propTypes = {};
@@ -19,7 +19,7 @@ $1.displayName = '$1';
 $1.propTypes = propTypes;
 endsnippet
 
-snippet rccs
+snippet rccs "create a pure react component using styles"
 import React, { PureComponent } from 'react';
 import classnames from 'classnames/bind';
 
@@ -39,7 +39,7 @@ $1.displayName = '$1';
 $1.propTypes = propTypes;
 endsnippet
 
-snippet rrcc
+snippet rrcc "create a pure, connected react component"
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { ${3:action} } from '../redux/actions';
@@ -66,43 +66,43 @@ export default connect(
 )($1);
 endsnippet
 
-snippet cdm
+snippet cdm "componentDidMount"
 componentDidMount() {
 	${0}
 }
 endsnippet
 
-snippet cdu
+snippet cdu "componentDidUpdate"
 componentDidUpdate(prevProps, prevState) {
 	${0}
 }
 endsnippet
 
-snippet cwm
+snippet cwm "componentWillMount"
 componentWillMount() {
 	${0}
 }
 endsnippet
 
-snippet cwr
+snippet cwr "componentWillReceiveProps"
 componentWillReceiveProps(nextProps) {
 	${0}
 }
 endsnippet
 
-snippet cwu
+snippet cwu "componentWillUnmount"
 componentWillUnmount() {
 	${0}
 }
 endsnippet
 
-snippet cwup
+snippet cwup "componentWillUpdate props"
 componentWillUpdate(nextProps, nextState) {
 	${0}
 }
 endsnippet
 
-snippet gdp
+snippet gdp "getDefaultProps"
 getDefaultProps: function() {
 	return {
 		${1}
@@ -110,21 +110,21 @@ getDefaultProps: function() {
 },
 endsnippet
 
-snippet sdp
-static defaultProps = {
-	${1}
-}
+snippet sdp "defaultProps"
+${1:${VISUAL:FooComponent}}.defaultProps = {
+	${2}
+};
 endsnippet
 
-snippet gcc
+snippet gcc "getChildContext"
 getChildContext() {
 	return {
 		${1}
 	};
-}
+};
 endsnippet
 
-snippet gis
+snippet gis "getInitialState"
 getInitialState: function() {
 	return {
 		${1}: ${0}
@@ -132,50 +132,50 @@ getInitialState: function() {
 },
 endsnippet
 
-snippet spt
-static propTypes = {
-	${1:PropName}: PropTypes.${0:string}
-}
+snippet spt "static propTypes"
+${1:${VISUAL:FooComponent}}.propTypes = {
+	${2:PropName}: PropTypes.${0:string}
+};
 endsnippet
 
-snippet dpt
+snippet dpt "add PropType"
 ${1:PropName}: PropTypes.${0:string}
 endsnippet
 
-snippet ren
+snippet ren "component render method"
 render() {
 	return (
-		${0:null}
+		${0:${VISUAL:null}}
 	);
 }
 endsnippet
 
-snippet scu
+snippet scu "shouldComponentUpdate"
 shouldComponentUpdate(nextProps, nextState) {
 	${0}
 }
 endsnippet
 
-snippet props
+snippet props "add props destruction props"
 const {
 	${0}
 } = this.props;
 endsnippet
 
-snippet debug
-import debug from 'debug';
+snippet debug "import and create debugger"
+import createDebugger from 'debug';
 
-const log = debug('${1:namespace}');
+const log = createDebugger('${1:${VISUAL:namespace}}');
 endsnippet
 
-snippet display
-static displayName = '${0:ComponentName}'
+snippet display "add static displayName attr"
+${1:${VISUAL:FooComponent}}.displayName = '${0:ComponentName}'
 endsnippet
 
-snippet cx
+snippet cx "add className attr to element creation"
 className='${1:foo}'
 endsnippet
 
-snippet cx()
+snippet cx() "add className to element with cx styling"
 className={ cx('${1:foo}') }
 endsnippet
