@@ -1,0 +1,27 @@
+snippet js "Start a JS map" 
+#js ${1:${VISUAL:\{:className ""\}}}
+endsnippet
+
+snippet defui "create a new component"
+(defui ^:once ${1:Component}
+	static uc/InitialAppState
+	(initial-state [this props] {})
+
+	static om/IQuery
+	(query [this] [])
+
+	static om/Ident
+	(ident [this props] [:child/by-name "`!p snip.rv=t[1].lower()`"])
+
+	Object
+	(render [this]
+		(let []
+			(dom/h1 #js {} "Hello World"))))
+
+(def ui-`!p snip.rv=t[1].lower()` (om/factory $1))
+endsnippet
+
+snippet mutate "add a untangled mutation"
+(defmethod mutate '${1:${VISUAL:app\/do-something}} [{:keys [state] :as env} _ {:keys [${2::id}] :as params}]
+	{:action (fn [] (${0}))})
+endsnippet
