@@ -176,6 +176,10 @@ snippet cx "add className attr to element creation"
 className='${1:foo}'
 endsnippet
 
-snippet cx() "add className to element with cx styling"
+snippet cxs "add className to element with cx styling"
 className={ cx('${1:foo}') }
+endsnippet
+
+snippet cxsw "Wrap className"
+{ cx(${1:${VISUAL:''}}) }
 endsnippet
