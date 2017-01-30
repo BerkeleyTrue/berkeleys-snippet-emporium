@@ -187,3 +187,10 @@ endsnippet
 snippet attr "Create a jsx attribute"
 ${1:${VISUAL:prop}}={ ${2:${VISUAL:value}} }${0}
 endsnippet
+
+snippet connect "Create a connected component"
+export default connect(
+	${1:mapStateToProps},
+	${2:mapDispatchToProps}
+)(${0:${VISUAL:Component}});
+endsnippet
