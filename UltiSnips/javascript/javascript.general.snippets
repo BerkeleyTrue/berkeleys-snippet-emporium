@@ -1,6 +1,14 @@
+snippet arrobj "Convert an array to an object"
+${1:${VISUAL: []}}.reduce((${2:${VISUAL:result}}, ${3:item}) => {
+	${4}
+	return $2;
+}, {})${0:;}
+endsnippet
+
 snippet log "call log"
 console.log(${1})${0:;}
 endsnippet
+
 snippet logd "call log with debugger"
 console.log('${1:${VISUAL}}: ', ${2:${VISUAL}})${0}
 endsnippet
