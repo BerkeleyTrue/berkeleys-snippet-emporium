@@ -4,6 +4,20 @@ def camelCaseToKebab(name):
 	return re.sub('([a-z0-9])([A-Z])', r'\1-\2', s1).lower()
 endglobal
 
+snippet rcf "create a functional react component"
+import React from 'react';
+
+const propTypes = {};
+export default function ${1:FooComponent}() {
+	return (
+		${0:<div>hello berks</div>}
+	);
+}
+
+$1.displayName = '$1';
+$1.propTypes = propTypes;
+endsnippet
+
 snippet rcc "create a pure react component"
 import React, { PureComponent } from 'react';
 
@@ -11,10 +25,11 @@ const propTypes = {};
 export default class ${1:FooComponent} extends PureComponent {
 	render() {
 		return (
-			${0: null}
+			${0:<div>hello berks</div>}
 		);
 	}
 }
+
 $1.displayName = '$1';
 $1.propTypes = propTypes;
 endsnippet
