@@ -59,7 +59,6 @@ endsnippet
 snippet rrcc "create a pure, connected react component"
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { ${3:action} } from '../redux/actions';
 
 const mapStateToProps = null;
 const mapDispatchToProps = null;
@@ -72,6 +71,29 @@ export class ${1:FooComponent} extends PureComponent {
 			${0:<span />}
 		);
 	}
+}
+$1.displayName = '$1';
+$1.propTypes = propTypes;
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)($1);
+endsnippet
+
+snippet rrfc "create a connected react functional component"
+import React from 'react';
+import { connect } from 'react-redux';
+
+const mapStateToProps = null;
+const mapDispatchToProps = null;
+const propTypes = {
+};
+
+export function ${1:FooComponent}() {
+	return (
+		${0:<span />}
+	);
 }
 $1.displayName = '$1';
 $1.propTypes = propTypes;
