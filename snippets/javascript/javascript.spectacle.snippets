@@ -9,4 +9,8 @@ snippet codes
 		transition={ [] }
 	/>
 snippet loc
-	{ loc: [ ${1:0}, ${2:1} ] }${0:,}
+	{
+		loc: [ ${1:0}, ${2:1} ],
+		note: '${3}',
+		title: '${4}'
+	}${5:,}${0}
