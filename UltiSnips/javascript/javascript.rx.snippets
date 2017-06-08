@@ -1,0 +1,19 @@
+snippet irxcl "import rxjs class" b
+import { ${1:${VISUAL}} } from 'rxjs/${2:$1}';${0}
+endsnippet
+
+snippet irxob "import rxjs observable" b
+import { ${1:${VISUAL}} } from 'rxjs/observable/${2:$1}';${0}
+endsnippet
+
+snippet irxop "import rxjs operator" b
+import { ${1:${VISUAL}} } from 'rxjs/operator/${2:$1}';${0}
+endsnippet
+
+snippet op "Add rx operator to chain" i
+.${1:${VISUAL:map}}(${0})
+endsnippet
+
+snippet opb "Add bound rx operator to chain" i
+::${1:${VISUAL:map}}(${0})
+endsnippet
