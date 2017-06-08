@@ -5,13 +5,11 @@ def camelCaseToKebab(name):
 endglobal
 
 snippet import
-import { ${1:${VISUAL}} } from '${2}';
-${0}
+import { ${1:${VISUAL}} } from '${2}';${0}
 endsnippet
 
 snippet importde
-import ${1:${VISUAL}} from '${2:`!p snip.rv = camelCaseToKebab(t[1])`}';
-${0}
+import ${1:${VISUAL}} from '${2:`!p snip.rv = camelCaseToKebab(t[1])`}';${0}
 endsnippet
 
 snippet arw
