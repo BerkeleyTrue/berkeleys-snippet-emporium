@@ -1,3 +1,63 @@
+global !p
+def camelCaseToKebab(name):
+    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1-\2', name)
+    return re.sub('([a-z0-9])([A-Z])', r'\1-\2', s1).lower()
+endglobal
+
+snippet import
+import { ${1:${VISUAL}} } from '${2}';${0}
+endsnippet
+
+snippet importde
+import ${1:${VISUAL}} from '${2:`!p snip.rv = camelCaseToKebab(t[1])`}';${0}
+endsnippet
+
+snippet arw
+${1:()} => ${0}
+endsnippet
+
+snippet meth
+${1:method}() {
+	${0}
+}
+endsnippet
+
+snippet thisbind "bind a method to context"
+this.${1:method} = this.$1.bind(this);
+endsnippet
+
+snippet class
+class ${1:ClassName} extends ${2:SuperClass} {
+	constructor(...args) {
+		super(...args);
+	}
+}
+endsnippet
+
+snippet prom
+const ${1:Name} = new Promise((res, rej) => {
+	${0}
+});
+endsnippet
+
+snippet construct
+constructor(...props) {
+	super(...props);
+}
+endsnippet
+
+snippet fun "create a named func"
+function ${1:foo}(${2}) {
+	${0}
+}
+endsnippet
+
+snippet func "create an anon func"
+function(${1}) {
+	${0}
+}
+endsnippet
+
 snippet ret "create return" b
 return ${0:${VISUAL:null}};
 endsnippet
