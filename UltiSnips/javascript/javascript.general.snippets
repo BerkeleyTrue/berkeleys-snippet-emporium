@@ -4,12 +4,8 @@ def camelCaseToKebab(name):
     return re.sub('([a-z0-9])([A-Z])', r'\1-\2', s1).lower()
 endglobal
 
-snippet import
-import { ${1:${VISUAL}} } from '${2}';${0}
-endsnippet
-
-snippet importde
-import ${1:${VISUAL}} from '${2:`!p snip.rv = camelCaseToKebab(t[1])`}';${0}
+snippet import "create an import statement"
+import ${1:\{ ${2} \}} from '${3}';$0
 endsnippet
 
 snippet arw
