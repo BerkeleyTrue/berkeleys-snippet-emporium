@@ -1,19 +1,15 @@
-snippet irxcl "import rxjs class" b
+snippet importrxcl "import rxjs class" b
 import { ${1:${VISUAL}} } from 'rxjs/${2:$1}';${0}
 endsnippet
 
-snippet irxob "import rxjs observable" b
+snippet importrxob "import rxjs observable" b
 import { ${1:${VISUAL}} } from 'rxjs/observable/`!p snip.rv = t[1].replace('_', '')`';${0}
 endsnippet
 
-snippet irxop "import rxjs operator" b
+snippet importrxop "import rxjs bind operator" b
 import { ${1:${VISUAL}} } from 'rxjs/operator/`!p snip.rv = t[1].replace('_', '')`';${0}
 endsnippet
 
-snippet cop "Add rx operator to chain" i
-.${1:${VISUAL:map}}(${0})
-endsnippet
-
-snippet copb "Add bound rx operator to chain" i
-::${1:${VISUAL:map}}(${0})
+snippet importrxlet "import rxjs let operators" b
+import { ${1:${VISUAL}} } from 'rxjs/operators';${0}
 endsnippet
