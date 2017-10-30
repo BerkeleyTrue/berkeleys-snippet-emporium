@@ -2,6 +2,10 @@ snippet action "export action" b
 export const ${1:actionName} = createAction(types.$1);$0
 endsnippet
 
+snippet gns "getNS fun" b
+const getNS = state => state[ns];
+endsnippet
+
 snippet selector "export selector" b
-export const ${1:stateName}Selector = state => ${2:state}.$1;$0
+export const ${1:stateName}Selector = state => ${2:getNS(state)}.${3:$1};$0
 endsnippet
