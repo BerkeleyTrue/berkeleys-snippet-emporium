@@ -13,3 +13,19 @@ endsnippet
 snippet importrxlet "import rxjs let operators" b
 import { ${1:${VISUAL}} } from 'rxjs/operators';${0}
 endsnippet
+
+snippet requirerxcl "require rxjs class" b
+const { ${1:${VISUAL}} } = require('rxjs/${2:$1}');${0}
+endsnippet
+
+snippet requirerxob "require rxjs observable" b
+const { ${1:${VISUAL}} } = require('rxjs/observable/`!p snip.rv = t[1].replace('_', '')`');${0}
+endsnippet
+
+snippet requirerxop "require rxjs bind operator" b
+const { ${1:${VISUAL}} } = require('rxjs/operator/`!p snip.rv = t[1].replace('_', '')`');${0}
+endsnippet
+
+snippet requirerxlet "require rxjs let operators" b
+const { ${1:${VISUAL}} } = require('rxjs/operators');${0}
+endsnippet
