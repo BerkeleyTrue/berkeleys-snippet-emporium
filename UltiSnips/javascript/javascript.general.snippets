@@ -5,15 +5,15 @@ def camelCaseToKebab(name):
 endglobal
 
 snippet import "create an import statement"
-import ${1:\{ ${2} \}} from '${3}';$0
+import ${2:\{ ${3} \}} from '${1}';$0
 endsnippet
 
 snippet export "create an export statement"
-export ${1:\{ ${2} \}} from '${3}';$0
+export ${2:\{ ${3} \}} from '${1}';$0
 endsnippet
 
 snippet req "create a require expression"
-const ${1:\{ ${2} \}} = require('${3}');$0
+const ${2:\{ ${3} \}} = require('${1}');$0
 endsnippet
 
 snippet arw
@@ -50,13 +50,13 @@ constructor(...props) {
 }
 endsnippet
 
-snippet fun "create a named func"
+snippet fun "create a named func" i
 function ${1:foo}(${2}) {
 	${0}
 }
 endsnippet
 
-snippet func "create an anon func"
+snippet func "create an anon func" i
 function(${1}) {
 	${0}
 }
