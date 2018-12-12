@@ -167,11 +167,19 @@ componentWillUpdate(nextProps, nextState) {
 endsnippet
 
 snippet gdp "getDefaultProps"
-getDefaultProps: function() {
+getDefaultProps() {
 	return {
 		${1}
 	};
-},
+}
+endsnippet
+
+snippet gdsfp "getDerivedStateFromProps"
+static getDerivedStateFromProps(props, state) {
+	return {
+		${1}
+	};
+}
 endsnippet
 
 snippet sdp "defaultProps"
