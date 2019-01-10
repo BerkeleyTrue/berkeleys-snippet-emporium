@@ -9,3 +9,19 @@ endsnippet
 snippet selector "export selector" b
 export const ${1:stateName}Selector = state => ${2:getNS(state)}.${3:$1};$0
 endsnippet
+
+snippet _selector "export lodash selector" b
+export const ${1:stateName}Selector = _.get([ns, ${2:$1});$0
+endsnippet
+
+snippet connect "Create a connected component"
+export default connect(
+	${1:mapStateToProps},
+	${2:mapDispatchToProps}
+)(${0:${VISUAL:Component}});
+endsnippet
+
+snippet reduxmap "add blank redux map functions" b
+const mapStateToProps = null;
+const mapDispatchToProps = null;
+endsnippet
