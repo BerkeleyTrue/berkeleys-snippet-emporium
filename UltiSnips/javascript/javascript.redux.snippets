@@ -25,3 +25,11 @@ snippet reduxmap "add blank redux map functions" b
 const mapStateToProps = null;
 const mapDispatchToProps = null;
 endsnippet
+
+snippet mergeProps "create a react-redux connect mergeProps func" b
+const mergeProps = (stateProps, dispatchProps, ownProps) => ({
+	...stateProps,
+	...dispatchProps,
+	...ownProps,$0
+});
+endsnippet
