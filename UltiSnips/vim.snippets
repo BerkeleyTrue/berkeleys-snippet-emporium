@@ -1,15 +1,35 @@
-snippet f "function" b
+snippet func "add vim function" b
+" Func: $1
+"-------------------------------------------------- {{{
 function! ${1:function_name}(${2})
-	${3:" code}
-endfunction
+	${0:" code}
+endfunction "}}}
 endsnippet
 
 snippet plug "Plugin definition"
 Plug '${0}'
 endsnippet
 
-snippet au "autocmd" 
+snippet au "add autogroup"
+" Group: $1
+"-------------------------------------------------- {{{
 augroup ${1:AU_NAME}
+	autocmd!
 	autocmd ${2:BufRead,BufNewFile} ${3:*.ext,*.ext3|<buffer[=N]>} ${0}
-augroup END
+augroup END "}}}
+endsnippet
+
+snippet section "add vim section header"
+" ${1:Header_Name}
+"++++++++++++++++++++++++++++++++++++++++++++++++++ {{{
+${0}
+"}}}
+endsnippet
+
+snippet group "add vim group header"
+" ==================================================
+" ${1:'Header_Name'}
+" ================================================== {{{
+${0}
+"}}}
 endsnippet
