@@ -2,7 +2,7 @@ priority -50
 
 snippet /** "A JSDoc comment" b
 /**
- * ${1:${VISUAL}}$0
+ * ${1:${VISUAL:Description Goes Here}}$0
  */
 endsnippet
 
@@ -11,9 +11,9 @@ snippet @const "@constructor"
 endsnippet
 
 snippet @p "@param {Type} varname"
-@param {${1:Type}} ${2:varname}$0
+@param {${2:Type}} ${1:varname}$0
 endsnippet
 
 snippet @ret "@returns {Type} Description"
-@returns {${1:Type}} ${2:Description}$0
+@returns {${2:Type}} ${1:Description}$0
 endsnippet
