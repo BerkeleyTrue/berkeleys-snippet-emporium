@@ -73,3 +73,17 @@ export default connect(
 	mapDispatchToProps,
 )($1);
 endsnippet
+
+snippet createTypes "create a types object" b
+export const types = createTypes([
+	'${1:clickOnFoo}'$0
+], ns);
+endsnippet
+
+snippet handleActions "create a actions handler"
+const defaultState = {
+};
+
+export default handleActions({
+}, defaultState);
+endsnippet
