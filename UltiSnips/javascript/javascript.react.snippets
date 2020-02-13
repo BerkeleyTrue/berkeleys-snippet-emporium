@@ -263,3 +263,13 @@ endsnippet
 snippet attr "Create a jsx attribute"
 ${1:${VISUAL:prop}}={ ${2:${VISUAL:value}} }${0}
 endsnippet
+
+snippet useEffect "add useEffect hook"
+useEffect(() => {
+	$1
+}, [$0]);
+endsnippet
+
+snippet useRef "Add useRef hook"
+const ${1}Ref = useRef(${2:null});$0
+endsnippet
