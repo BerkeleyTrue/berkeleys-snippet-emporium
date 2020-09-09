@@ -1,0 +1,13 @@
+snippet import_ "import lodash/fp"
+import _ from 'lodash/fp';
+endsnippet
+
+snippet _.flow "lodash flow"
+_.flow(
+	$0
+)()
+endsnippet
+
+snippet _.tap "Tap to debug"
+_.tap(x => console.log('${1:x}: ', x)),$0
+endsnippet
