@@ -16,18 +16,8 @@ snippet require "create a require expression"
 const ${2:\{ ${3} \}} = require('${1}');$0
 endsnippet
 
-snippet arw
+snippet ()= "create arrow function"
 ${1:()} => ${0}
-endsnippet
-
-snippet meth
-${1:method}() {
-	${0}
-}
-endsnippet
-
-snippet thisbind "bind a method to context"
-this.${1:method} = this.$1.bind(this);
 endsnippet
 
 snippet class
@@ -36,12 +26,6 @@ class ${1:ClassName} extends ${2:SuperClass} {
 		super(...args);
 	}
 }
-endsnippet
-
-snippet prom
-const ${1:Name} = new Promise((res, rej) => {
-	${0}
-});
 endsnippet
 
 snippet construct
@@ -62,25 +46,8 @@ function(${1}) {
 }
 endsnippet
 
-snippet ret "create return" b
-return ${0:${VISUAL:null}};
-endsnippet
-
-snippet objarr "obj to array" w
-Object.keys(${1:${VISUAL:obj}})
-	.map(key => $1[key])
-	${0}
-endsnippet
-
-snippet arrobj "Convert an array to an object"
-${1:${VISUAL: []}}.reduce((${2:${VISUAL:result}}, ${3:item}) => {
-	${4}
-	return $2;
-}, {})${0:;}
-endsnippet
-
 snippet log "call log"
-console.log(${1:'${2:}'})$0
+console.log('${1}')$0
 endsnippet
 
 snippet logd "call log with debugger"
@@ -95,10 +62,9 @@ snippet cosnt "remap common const mispelling"
 const ${0}
 endsnippet
 
-snippet importr "import ramda"
-import * as R from 'ramda';
-endsnippet
-
-snippet importra "import ramda-adjunct"
-import * as RA from 'ramda';
+snippet iferr "handle error first callbacks"
+if (err) {
+	return ${1:callback}(err);
+}
+${2:return $1($0);}
 endsnippet

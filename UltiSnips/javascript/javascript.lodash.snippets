@@ -2,12 +2,12 @@ snippet import_ "import lodash/fp"
 import _ from 'lodash/fp';
 endsnippet
 
-snippet _.flow "lodash flow"
+snippet _.flow "create a flow"
 _.flow(
 	$0
 )()
 endsnippet
 
-snippet _.tap "Tap to debug"
+snippet _.tap "Tap flow with log"
 _.tap(x => console.log('${1:x}: ', x)),$0
 endsnippet
