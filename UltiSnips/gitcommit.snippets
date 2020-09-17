@@ -1,0 +1,89 @@
+# <type>(<scope>): <short summary>
+#   │       │             │
+#   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
+#   │       │
+#   │       └─⫸ Commit Scope: animations|bazel|benchpress|common|compiler|compiler-cli|core|
+#   │                          elements|forms|http|language-service|localize|platform-browser|
+#   │                          platform-browser-dynamic|platform-server|platform-webworker|
+#   │                          platform-webworker-dynamic|router|service-worker|upgrade|zone.js|
+#   │                          packaging|changelog|dev-infra|docs-infra|migrations|ngcc|ve
+#   │
+#   └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|style|test
+#
+#
+# summary:
+#  * use the imperative, present tense: "change" not "changed" nor "changes"
+#  * don't capitalize the first letter
+#  * no dot (.) at the end
+
+# Footer
+# BREAKING CHANGE: <breaking change summary>
+# <BLANK LINE>
+# <breaking change description + migration instructions>
+# <BLANK LINE>
+# <BLANK LINE>
+# Fixes #<issue number>
+
+snippet feat "changes that add a new feature"
+feat(${1:subject}): ${2:Summary in present tense. Not capitalized. No period at the end.}
+
+$0
+endsnippet
+
+snippet fix "changes that fix an issue"
+fix(${1:subject}): ${2:Summary in present tense. Not capitalized. No period at the end.}
+
+$0
+endsnippet
+
+snippet chore "create a fix commit"
+chore(${1:subject}): ${2:Summary in present tense. Not capitalized. No period at the end.}
+
+$0
+endsnippet
+
+snippet refactor "changes that do not add a feature or fix an issue"
+refactor(${1:subject}): ${2:Summary in present tense. Not capitalized. No period at the end.}
+
+$0
+endsnippet
+
+snippet build "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
+build(${1:subject}): ${2:Summary in present tense. Not capitalized. No period at the end.}
+
+$0
+endsnippet
+
+snippet ci "Changes to our CI configuration files and scripts (example scopes: Circle, BrowserStack, SauceLabs)"
+ci(${1:subject}): ${2:Summary in present tense. Not capitalized. No period at the end.}
+
+$0
+endsnippet
+
+snippet docs "Documentation only changes"
+docs(${1:subject}): ${2:Summary in present tense. Not capitalized. No period at the end.}
+
+$0
+endsnippet
+
+snippet perf "A code change that improves performance"
+perf(${1:subject}): ${2:Summary in present tense. Not capitalized. No period at the end.}
+
+$0
+endsnippet
+
+snippet test "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
+test(${1:subject}): ${2:Summary in present tense. Not capitalized. No period at the end.}
+
+$0
+endsnippet
+# Footer
+snippet break "add breaking change statement"
+BREAKING CHANGE: ${1:Summary in present tense. Not capitalized. No period at the end.}
+
+${2:breaking change description + migration instructions}
+endsnippet
+
+snippet issue "add closing issue statement"
+Closes #${1:8128}
+endsnippet
