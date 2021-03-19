@@ -16,34 +16,45 @@ snippet require "create a require expression"
 const ${2:\{ ${3} \}} = require('${1}');$0
 endsnippet
 
-snippet ()= "create arrow function"
-${1:()} => ${0}
+snippet class
+class ${1:ClassName} {
+}
 endsnippet
 
-snippet class
+snippet subclass "Create a subclass"
 class ${1:ClassName} extends ${2:SuperClass} {
-	constructor(...args) {
-		super(...args);
+	constructor() {
+		super();
 	}
 }
 endsnippet
 
 snippet construct
-constructor(...props) {
-	super(...props);
+constructor() {
+	super();
 }
 endsnippet
 
-snippet fun "create a named func" i
+snippet fun "create a func"
 function ${1:foo}(${2}) {
 	${0}
 }
 endsnippet
 
-snippet func "create an anon func" i
-function(${1}) {
+snippet afn "create an async func"
+async (${1}) => {
 	${0}
 }
+endsnippet
+
+snippet afnc "create an async func"
+async function ${1:foo}(${2}) {
+	${0}
+}
+endsnippet
+
+snippet fn "create arrow function"
+($1) => ${0}
 endsnippet
 
 snippet log "call log"
