@@ -10,10 +10,18 @@ snippet @const "@constructor"
 @constructor
 endsnippet
 
-snippet @p "@param {Type} varname"
-@param {${2:Type}} ${1:varname}$0
+snippet @p "@param {Type} name"
+@param {${2:Type}} ${1:name}$0
+endsnippet
+
+snippet @pr "@property {Type} name"
+@property {${2:Type}} ${1:name}$0
 endsnippet
 
 snippet @ret "@returns {Type} Description"
 @returns {${2:Type}} ${1:Description}$0
+endsnippet
+
+snippet @type "@typedef {Type} Name"
+@typedef {${2:Type}} ${1:Name}
 endsnippet
