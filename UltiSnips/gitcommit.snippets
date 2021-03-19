@@ -61,19 +61,25 @@ $0
 endsnippet
 
 snippet docs "Documentation only changes"
-docs(${1:subject}): ${2:Summary in present tense. Not capitalized. No period at the end.}
+docs(${1:subject}): $2
 
 $0
 endsnippet
 
 snippet perf "A code change that improves performance"
-perf(${1:subject}): ${2:Summary in present tense. Not capitalized. No period at the end.}
+perf(${1:subject}): $2
 
 $0
 endsnippet
 
 snippet test "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
-test(${1:subject}): ${2:Summary in present tense. Not capitalized. No period at the end.}
+test(${1:subject}): $2
+
+$0
+endsnippet
+
+snippet style "Changes that effect styling (whitespace, indenting)"
+style(${1:subject}): $2
 
 $0
 endsnippet
