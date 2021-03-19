@@ -1,0 +1,13 @@
+snippet module "create an aniseed module expr" i
+(module $0
+	{require {: utils}
+	 require-macros [macros]})
+endsnippet
+
+snippet df- "create an aniseed private function" i
+defn- $1 [$2]$0
+endsnippet
+
+snippet df "create an aniseed function" i
+defn $1 [$2]$0
+endsnippet
