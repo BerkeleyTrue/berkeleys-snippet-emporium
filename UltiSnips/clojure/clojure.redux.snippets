@@ -1,0 +1,8 @@
+snippet action "create action" b
+(def ${1:action-name} (create-action ::$1))$0
+endsnippet
+
+snippet selector "create state selector"
+(defn ${1:state-name}-selector [state]
+	#(get-in state [::state :$1]))
+endsnippet
