@@ -8,10 +8,14 @@ snippet (module "create an aniseed module expr" b
 	 require-macros [macros]})
 endsnippet
 
-snippet df- "create an aniseed private function" w
-defn- $1 [$2]$0
+snippet (fun- "create an aniseed private function" w
+(defn- $1 [$2]$0
 endsnippet
 
-snippet df "create an aniseed function" w
-defn $1 [$2]$0
+snippet (fun "create an aniseed function" w
+(defn $1 [$2]$0
+endsnippet
+
+snippet (main "Create a main func." w
+(defn main [$2]$0
 endsnippet
